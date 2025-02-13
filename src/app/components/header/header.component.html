@@ -1,0 +1,51 @@
+<div class="container-header">
+  <div class="container">
+    <div class="header-content row">
+      <div class="col-auto">
+        <a href="/">
+          <img
+            src="https://www.shopeefood.co.id/_next/static/95a8c8cd35b8f91e6caa136ca9f7b2f2.png"
+            class="logo"
+          />
+        </a>
+      </div>
+      <!-- danh sách chọn địa điểm -->
+      <div class="col-auto">
+        <div class="select-contater">
+          <p-select
+            [options]="cities"
+            [(ngModel)]="selectedCity"
+            optionLabel="name"
+            placeholder="Địa điểm"
+            (onchange)="handle()"
+            [style]="{ color: '#fff', gap: '10px' }"
+            [panelStyle]="{
+              'background-color': 'rgb(26, 24, 25, 0.4)',
+              'margin-top': '15px',
+              'width': '200px',
+              'margin-left': '-20px',
+              padding: '10px',
+              'border-width': '2px',
+              'border-color': 'azure'
+            }"
+          >
+            <ng-template let-country #item>
+                <div class="flex items-center">
+                    <span>{{ country.name }}</span>
+                    <span>{{country.count}} địa điểm</span>
+                </div>
+            </ng-template>
+          </p-select>
+        </div>
+      </div>
+      <!-- Danh sách menu -->
+      <div class="col-auto">
+        <div class="menu">
+            <p>Đồ ăn</p>
+        </div>
+      </div>
+      <div class="col-auto"></div>
+      <div class="col-auto"></div>
+    </div>
+  </div>
+</div>
